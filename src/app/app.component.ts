@@ -10,4 +10,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Kush_Patel_Learning_Angular';
+  message: string = 'Hello, Welcome to my angular projects. Here, I will create some cool projects!'
+  favNumber: number = 7;
 }
