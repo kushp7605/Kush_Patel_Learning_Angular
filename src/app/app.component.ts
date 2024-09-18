@@ -20,7 +20,6 @@ export class AppComponent {
     { id: 4, title: 'Romeo and Juliet', author: 'William Shakespeare', publicationYear: 1597, genre: 'Tragedy', },
     { id: 5, title: 'Marvel Comics', author: 'Stan Lee', publicationYear: 1939, genre: 'Superhero, Fantasy, Action, Adventure', rating: 5.0 },
     { id: 6, title: 'Brave New World', author: 'Aldous Huxley', publicationYear: 1932, genre: 'Science Fiction, Dystopian', rating: 4.4},
-    { id: 7, title: 'The Stand', author: 'Stephen King', publicationYear: 1978, genre: 'Post-Apocalyptic, Dark fantasy' },
-    { id: 8, title: 'The Old Man and The Sea', author: 'Ernest Hemingway', publicationYear: 1952, genre: 'Literary Fiction' }
+    { id: 7, title: 'The Stand', author: 'Stephen King', publicationYear: 1978, genre: 'Post-Apocalyptic, Dark fantasy' }
   ];
 }
