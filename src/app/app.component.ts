@@ -22,4 +22,9 @@ export class AppComponent {
     { id: 6, title: 'Brave New World', author: 'Aldous Huxley', publicationYear: 1932, genre: 'Science Fiction, Dystopian', rating: 4.4},
     { id: 7, title: 'The Stand', author: 'Stephen King', publicationYear: 1978, genre: 'Post-Apocalyptic, Dark fantasy' }
   ];
+
+  // Method to toggle the ratings display
+  toggleRating(book: Book): void {
+    book.showRating = !book.showRating;
+  } 
 }
