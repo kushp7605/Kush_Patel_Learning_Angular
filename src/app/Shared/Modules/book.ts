@@ -5,4 +5,6 @@ export interface Book {
     publicationYear: number; // Required Property
     genre: string; // Required Property
     rating?: number; // Optional Property
+    showRating?: boolean; // Optional Property to track rating visibility
 }
+
