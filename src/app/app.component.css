@@ -27,3 +27,23 @@ p {
     line-height: 1.5;
     font-family: 'Verdana', sans-serif;
 }
+
+/* Styling for the "Show Rating" button */
+.rating-button {
+    background-color: rgb(70, 130, 180);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px 0;
+}
+
+/* Hover effect for the "Show Rating" button */
+.rating-button:hover {
+    background-color: rgb(60, 115, 160);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
