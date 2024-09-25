@@ -12,7 +12,7 @@ import { Book } from './Shared/Modules/book';
 })
 
 export class AppComponent {
-  title = 'Book List';
+  title = 'Books List App';
   books: Book[] = [
     { id: 1, title: '1984', author: 'George Orwell', publicationYear: 1949, genre: 'Dystopian, Political Fiction', rating: 4.5 },
     { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', publicationYear: 1960, genre: 'Southern Gothic', },
