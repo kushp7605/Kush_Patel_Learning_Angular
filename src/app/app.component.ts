@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 import { Book } from './Shared/Modules/book';
+import { BooksListComponent } from "./books-list/books-list.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, BooksListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
