@@ -1,17 +1,4 @@
 <div class="container">
-  <div *ngFor="let book of books">
-    <h2>Book Title: {{ book.title }}</h2>
-    <p>ID: {{ book.id }}</p>
-    <p>Author: {{ book.author }}</p>
-    <p>Publication Year: {{ book.publicationYear }}</p>
-    <p>Genre: {{ book.genre }}</p>
-
-    <!-- Button to show rating -->
-    <button (click)="toggleRating(book)">Show Rating</button>
-
-    <!-- Conditionally display rating or no rating message -->
-    <p *ngIf="book.showRating">
-      {{ book.rating ? 'Rating: ' + book.rating : 'No Ratings available for this book' }}
-    </p>
-  </div>
+  <h1>Welcome To My {{title}}</h1>
+  <app-books-list></app-books-list>
 </div>
