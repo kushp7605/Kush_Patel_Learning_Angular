@@ -1,5 +1,17 @@
+/* Styling for individual book items */
 .book-item {
     border: 2px solid black;
     padding: 10px;
     margin: 5px;
 }
+
+/* Background color for even-indexed book items */
+.even-item {
+    background-color: pink; /* Sets the background color to pink for even items */
+}
+
+/* Background color for odd-indexed book items */
+.odd-item {
+    background-color: teal; /* Sets the background color to teal for odd items */
+}
+
