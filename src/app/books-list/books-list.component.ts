@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { Book } from '../Shared/Modules/book';
+import { BooksListItemComponent } from '../books-list-item/books-list-item.component';
 
 @Component({
   selector: 'app-books-list',
   standalone: true,
-  imports: [],
+  imports: [BooksListItemComponent],
   templateUrl: './books-list.component.html',
   styleUrl: './books-list.component.css'
 })
+
 export class BooksListComponent {
   books: Book[] = [
     { id: 1, title: 'To Kill a Mockingbird', author: 'Harper Lee', publicationYear: 1960, genre: 'Southern Gothic', },
