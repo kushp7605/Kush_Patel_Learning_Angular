@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Book } from '../Shared/Modules/book';
 
 @Component({
   selector: 'app-books-list-item',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './books-list-item.component.html',
   styleUrl: './books-list-item.component.css'
 })
-export class BooksListItemComponent {
 
+export class BooksListItemComponent {
+  @Input() book!: Book; // Ensure book is defined
 }
