@@ -9,41 +9,10 @@
     margin: auto;
 }
 
-/* Styling for book titles */
-h2 {
-    color: rgb(123, 31, 162);
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    border-bottom: 2px solid rgb(123, 31, 162);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-/* Styling for paragraphs */
-p {
-    color: rgb(70, 130, 180);
-    font-size: 18px;
-    margin: 8px 0;
-    line-height: 1.5;
-    font-family: 'Verdana', sans-serif;
-}
-
-/* Styling for the "Show Rating" button */
-.rating-button {
-    background-color: rgb(70, 130, 180);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px 0;
-}
-
-/* Hover effect for the "Show Rating" button */
-.rating-button:hover {
-    background-color: rgb(60, 115, 160);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+/* Styling for h1 */
+h1 {
+    font-size: 36px;
+    color: darkgreen; 
+    text-align: center; 
+    margin-bottom: 20px;
 }
