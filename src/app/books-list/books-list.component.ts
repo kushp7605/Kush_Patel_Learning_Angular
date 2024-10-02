@@ -22,10 +22,10 @@ export class BooksListComponent implements OnInit {
   // Lifecycle hook that is called after the component is initialized
   ngOnInit(): void {
     // Call the getBooks method from BooksService and subscribe to the Observable
-    this.booksService.getBooks().subscribe((data: Book[]) => {
-      
-      // Assign the retrieved book data to the books property
-      this.books = data; 
+    this.booksService.getBooks().subscribe({
+      next: (data: Book[]) => this.books = data,
+      error:err => console.error("Error Fetching", err),
+      complete:() => console.log("Fetch Complete!")
     });
   }
 }
