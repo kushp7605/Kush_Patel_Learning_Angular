@@ -1,13 +1,10 @@
 <div class="book-item">
-    <h2>Book Title: {{ book.title }}</h2>
-    <p>Author: {{ book.author }}</p>
-    <p>Publication Year: {{ book.publicationYear }}</p>
-    <p>Genre: {{ book.genre }}</p>
-    
-    <!-- Display rating based on visibility and availability -->
-    <p *ngIf="showRating && book.rating">Ratings: {{ book.rating }}</p>
-    <p *ngIf="showRating && !book.rating">No ratings available for this book</p>
-    
-    <!-- Button to toggle rating visibility -->
+    <h2>Book Title: {{ book?.title }}</h2>
+    <p>Author: {{ book?.author }}</p>
+    <p>Publication Year: {{ book?.publicationYear }}</p>
+    <p>Genre: {{ book?.genre }}</p>
+    <p *ngIf="book?.showRating && book?.rating">Ratings: {{ book?.rating }}</p>
+    <p *ngIf="book?.showRating && !book?.rating">No ratings available for this book</p>
     <button (click)="toggleRating()">Show Ratings</button>
-</div>
+  </div>
+  
