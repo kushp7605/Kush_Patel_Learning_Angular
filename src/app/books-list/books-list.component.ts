@@ -28,4 +28,9 @@ export class BooksListComponent implements OnInit {
       complete:() => console.log("Fetch Complete!")
     });
   }
+
+  selectedBook?: Book;
+  selectBook(book: Book): void {
+    this.selectedBook = book;
+  }
 }
