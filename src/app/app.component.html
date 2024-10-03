@@ -1,4 +1,11 @@
 <div class="container">
-  <h1>Welcome To My {{title}}</h1>
+  <!-- Display the title -->
+  <h1>{{ title }}</h1>
+  
+  <!-- Display the selected book -->
+  <app-books-list-item [book]="selectedBook"></app-books-list-item>
+
+  <!-- Existing books list display -->
   <app-books-list></app-books-list>
+
 </div>
