@@ -11,11 +11,13 @@ import { Book } from '../Shared/Modules/book';
 })
 
 export class BooksListItemComponent {
-  @Input() book!: Book; // Accepts a Book object
+  @Input() book?: Book; // Accepts a Book object
   @Input() showRating?: boolean; // Accepts showRating for visibility of ratings available for books or not
 
   // Method to toggle the showRating property
   toggleRating(): void {
-    this.showRating = !this.showRating;
+    if (this.book) {
+      this.book.showRating = !this.book.showRating;
+    }
   }
 }
