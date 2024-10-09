@@ -1,5 +1,4 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { provideRouter, Routes } from '@angular/router';
 import { BooksListComponent } from './app/books-list/books-list.component';
@@ -8,14 +7,13 @@ import { PageNotFoundComponent } from './app/page-not-found/page-not-found.compo
 import { ModifyListItemComponent } from './app/modify-list-item/modify-list-item.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/books', pathMatch: 'full'}, // Default route
+  { path: '', redirectTo: '/books', pathMatch: 'full' }, // Default route
   { path: 'books', component: BooksListItemComponent },
-  { path: 'books/:id', component: BooksListComponent},
+  { path: 'books/:id', component: BooksListComponent },
   { path: 'modify-item', component: ModifyListItemComponent },
-  { path: '**', component: PageNotFoundComponent} // Wildcard route for a 404 page
+  { path: '**', component: PageNotFoundComponent } // Wildcard route for a 404 page
 ];
 
 bootstrapApplication(AppComponent, {
   providers: [provideRouter(routes)]
 }).then(r => console.log('Bootstrap successful'));
-
