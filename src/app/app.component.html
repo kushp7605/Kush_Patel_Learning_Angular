@@ -1,11 +1,16 @@
+<!-- Navigation Bar -->
+<div class="nav-bar">
+  <nav>
+    <a routerLink="/books" routerLinkActive="active">Books List</a>
+    <a routerLink="/modify-item" routerLinkActive="active">Modify Book</a>
+  </nav>
+</div>
+
+
 <div class="container">
   <!-- Display the title -->
   <h1>{{ title }}</h1>
   
-  <!-- Display the selected book -->
-  <app-books-list-item [book]="selectedBook"></app-books-list-item>
-
-  <!-- Existing books list display -->
-  <app-books-list></app-books-list>
-
+  <!-- Router outlet to display routed components -->
+  <router-outlet></router-outlet>
 </div>
