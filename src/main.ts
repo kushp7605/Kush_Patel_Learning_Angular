@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full' }, // Default route
   { path: 'books', component: BooksListComponent },
   { path: 'books/:id', component: BooksListItemComponent },
-  { path: 'modify-item', component: ModifyListItemComponent },
+  { path: 'modify-list-item', component: ModifyListItemComponent },
   { path: '**', component: PageNotFoundComponent } // Wildcard route for a 404 page
 ];
 
