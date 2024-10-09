@@ -1,0 +1,17 @@
+/* Styles for the Modify List Item Component */
+.modify-list-item {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styles for the heading (h2) in the Modify List Item component */
+.modify-list-item h2 {
+    color: red;
+}
+
+/* Styles for the hyperlink in the Modify List Item component */
+.modify-list-item a {
+    color: blue;
+    text-decoration: underline;
+}
+  
