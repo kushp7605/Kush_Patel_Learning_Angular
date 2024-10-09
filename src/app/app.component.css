@@ -21,6 +21,7 @@ h1 {
 .nav-bar {
     background-color: darkgray;
     padding: 10px;
+    text-align: center;
 }
 
 /* Styling for the link */
