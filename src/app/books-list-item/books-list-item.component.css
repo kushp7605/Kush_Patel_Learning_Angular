@@ -55,5 +55,11 @@ p {
     margin: 8px 0;
     line-height: 1.5;
     font-family: 'Verdana', sans-serif;
-} 
+}
+
+/* Styling for image */
+img {
+    padding-left: 400px;
+    margin-top: -250px
+}
 
