@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule, NgOptimizedImage } from '@angular/common'; 
 import { Book } from '../Shared/Modules/book';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-books-list-item',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, NgOptimizedImage],
   templateUrl: './books-list-item.component.html',
   styleUrl: './books-list-item.component.css'
 })
