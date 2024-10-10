@@ -7,5 +7,7 @@
     <p *ngIf="book?.showRating && book?.rating">Ratings: {{ book?.rating }}</p>
     <p *ngIf="book?.showRating && !book?.rating">No ratings available for this book</p>
     <button (click)="toggleRating()">Show Ratings</button>
+
+    <img ngSrc="{{book?.image}}" height="150" width="120" />
   </div>
   
