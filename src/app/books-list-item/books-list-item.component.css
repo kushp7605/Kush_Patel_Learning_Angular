@@ -7,12 +7,12 @@
 
 /* Background color for even-indexed book items */
 .even-item {
-    background-color: pink; /* Sets the background color to pink for even items */
+    background-color: pink;
 }
 
 /* Background color for odd-indexed book items */
 .odd-item {
-    background-color: teal; /* Sets the background color to teal for odd items */
+    background-color: teal; 
 }
 
 /* Styling for the button */
@@ -59,7 +59,8 @@ p {
 
 /* Styling for image */
 img {
-    padding-left: 400px;
-    margin-top: -250px
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-right: 250px;
 }
 
