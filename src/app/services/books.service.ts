@@ -30,19 +30,24 @@ export class BooksService {
   }
 
   // Method to update an existing book by its ID
-  updateBook(updatedBook: Book) : Observable<Book[]> {
+  updateBook(updatedBook: Book) : Observable<Book | undefined> {
     // Find the index of the book to update
     const index = this.books.findIndex(book => book.id === updatedBook.id);
-    if (index !== -1) {
+    if (index > -1) {
       this.books[index] = updatedBook; // Update the book at the found index
+      return of(updatedBook);
     }
-    return of(this.books); // Return the updated books array wrapped in an observable
+    return of(undefined); // Return the updated books array wrapped in an observable
   }
 
   // Method to delete a book by its ID
-  deleteBook(bookId: number) : Observable<Book[]> {
+  deleteBook(bookId: number) : void {
     // Filter out the book with the given ID from the books array
     this.books = this.books.filter(book => book.id !== bookId);
-    return of(this.books); // Return the updated books array wrapped in an observable
-  } 
+  }
+  
+  // New method to generate a new unique ID
+  generateNewId() : number {
+    return this.books.length > 0 ? Math.max(...this.books.map(book => book.id)) + 1 : 1;
+  }
 }
