@@ -1,3 +1,9 @@
-<div *ngFor="let book of books; let i = index" [ngStyle]="{'background-color': i % 2 === 0 ? 'pink' : 'teal'}">
-    <app-books-list-item [book]="book" [showRating]="book.showRating"></app-books-list-item>
+<div *ngFor="let book of books; let i = index" class="book-container" [ngStyle]="{'background-color': i % 2 === 0 ? 'pink' : 'teal'}">
+  <app-books-list-item [book]="book" [showRating]="book.showRating"></app-books-list-item>
+  
+  <!-- Edit and Delete Buttons -->
+  <div class="button-container">
+    <button type="button" class="edit-button" (click)="editBook(book.id)">Edit</button>
+    <button type="button" class="delete-button" (click)="deleteBook(book.id)">Delete</button>
+  </div>
 </div>
