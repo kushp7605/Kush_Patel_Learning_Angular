@@ -1,1 +1,43 @@
-<app-page-not-found></app-page-not-found>
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <!-- ID Field -->
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input type="number" id="id" formControlName="id" />
+    </div>
+
+    <!-- Title Field -->
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" formControlName="title" />
+    </div>
+
+    <!-- Author Field -->
+    <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" id="author" formControlName="author" />
+    </div>
+
+    <!-- Genre Field -->
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" formControlName="genre" />
+    </div>
+
+    <!-- Publication Year Field -->
+    <div class="form-group">
+        <label for="publicationYear">Publication Year</label>
+        <input type="text" id="publicationYear" formControlName="publicationYear" />
+    </div>
+
+    <!-- Ratings Field -->
+    <div class="form-group">
+        <label for="rating">Ratings</label>
+        <input type="text" id="rating" formControlName="rating" />
+    </div>
+
+    <!-- Submit Button (Add or Update) -->
+  <button type="submit">Add</button>
+
+  <!-- Back Button -->
+  <button type="button" (click)="navigateToBookList()">Back To Book List</button>
+</form>
