@@ -1,0 +1,52 @@
+/* Style the button container to keep buttons aligned at the bottom */
+.button-container {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+  
+/* Style the Edit button */
+.edit-button {
+    background-color: darkblue;
+    color: yellow; 
+    border: none;
+    padding: 8px 16px;
+    margin-left: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+  
+.edit-button:hover {
+    background-color: rgb(139, 0, 0);
+    transform: scale(1.05);
+}
+
+/* Button focus style */
+.edit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+  
+/* Style the Delete button */
+.delete-button {
+    background-color: darkgreen;
+    color: yellow;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+  
+.delete-button:hover {
+    background-color: darkorange;
+    transform: scale(1.05);
+}
+
+/* Button focus style */
+.delete-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+  
