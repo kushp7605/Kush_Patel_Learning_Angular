@@ -1,6 +1,6 @@
 /* Styling for individual book items */
 .book-item {
-    border: 2px solid black;
+    border: 3px solid black;
     padding: 10px;
     margin: 5px;
 }
@@ -63,4 +63,6 @@ img {
     margin-bottom: 50px;
     padding-right: 250px;
 }
+
+
 
