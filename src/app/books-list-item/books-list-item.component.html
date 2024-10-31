@@ -1,12 +1,12 @@
 <div class="book-item">
     <h2>Book Title: {{ book?.title }}</h2>
-    <img ngSrc="{{book?.image}}" height="150" width="120" />
     <p>ID: {{book?.id}}</p>
     <p>Author: {{ book?.author }}</p>
     <p>Publication Year: {{ book?.publicationYear }}</p>
     <p>Genre: {{ book?.genre }}</p>
     <p *ngIf="book?.showRating && book?.rating">Ratings: {{ book?.rating }}</p>
     <p *ngIf="book?.showRating && !book?.rating">No ratings available for this book</p>
+    
     <button (click)="toggleRating()">Show Ratings</button>
 </div>
   
