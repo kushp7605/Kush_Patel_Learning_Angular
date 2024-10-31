@@ -54,7 +54,6 @@ export class ModifyListItemComponent implements OnInit {
     // Check if we are updating an existing book
     if(book.id) {
       this.booksService.updateBook(book);
-      this.router.navigate(['/books']);
     } else {
       // For adding a new book, generate a new ID
       const newId = this.booksService.generateNewId(); // This method will create a new ID
@@ -62,6 +61,7 @@ export class ModifyListItemComponent implements OnInit {
       this.booksService.addBook(book);
     }
 
+    this.router.navigate(['/books']);
     this.bookForm.reset();
   }
 
