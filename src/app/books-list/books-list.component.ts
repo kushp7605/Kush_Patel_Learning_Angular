@@ -32,8 +32,8 @@ export class BooksListComponent implements OnInit {
   }
 
   // Navigate to the edit form with the selected book ID
-  editBook(bookId: number): void {
-    this.router.navigate(['/modify-list-item']);
+  editBook(bookId: number | undefined): void {
+    this.router.navigate(['/modify-list-item', bookId]);
   }
 
   deleteBook(bookId: number ): void {
