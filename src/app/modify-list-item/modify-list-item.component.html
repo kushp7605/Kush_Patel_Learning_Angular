@@ -35,12 +35,6 @@
         <input type="text" id="rating" formControlName="rating" placeholder="Enter Ratings If Available"/>
     </div>
 
-    <!-- Image Field -->
-     <div class="form-group">
-        <label for="image">Image</label>
-        <input type="text" id="image" formControlName="image" placeholder="Not Necessarily Required! Default Image Will Be Added"/>
-     </div>
-
     <!-- Conditional Button rendering based on whether ID exists or not (Add or Update) -->
   <button type="submit" *ngIf="bookForm.get('id')?.value">Update Book</button>
   <button type="submit" *ngIf="!bookForm.get('id')?.value">Add Book</button>
