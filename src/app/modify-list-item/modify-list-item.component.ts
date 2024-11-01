@@ -33,7 +33,6 @@ export class ModifyListItemComponent implements OnInit {
       publicationYear: [''],
       rating: [''],
       showRating: [''],
-      image: [''],
     });
   }
 
@@ -60,7 +59,6 @@ export class ModifyListItemComponent implements OnInit {
       // For adding a new book, generate a new ID
       const newId = this.booksService.generateNewId(); // This method will create a new ID
       book.id = newId;
-      book.image = "images/defaultbook.jpg";
       this.booksService.addBook(book);
     }
 
