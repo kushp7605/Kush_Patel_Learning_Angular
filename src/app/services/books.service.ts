@@ -1,53 +1,54 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { Book } from '../Shared/Modules/book';
 import { BOOKS } from '../data/mock-books';
+import {catchError, Observable, of, throwError} from "rxjs";
+import {HttpClient,HttpErrorResponse} from "@angular/common/http";
+
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class BooksService {
+  private apiUrl = 'api/books';
   // Initialize the books array directly with mock data
   private books: Book[] = BOOKS;
-  constructor() {}
+  constructor(private http: HttpClient) {}
   
   // Method to return an Observable of the BOOKS array
   getBooks(): Observable<Book[]> {
-    return of(BOOKS); // Return the BOOKS array wrapped in an observable
+    return this.http.get<Book[]>(this.apiUrl).pipe(catchError(this.handleError));
   }
 
   // Method to get a specific book by its ID
-  getBookById(bookId: number) : Observable<Book | undefined> {
-    const book = this.books.find(book => book.id === bookId); // Find the book with the given ID
-    return of(book); // Return the found book wrapped in an observable
+  getBookById(bookId: number) : Observable<Book> {
+    return this.http.get<Book>(`${this.apiUrl}/${bookId}`).pipe(catchError(this.handleError));
   }
 
   // Method to add a new book to the array
-  addBook(newBook: Book) : Observable<Book[]> {
-    this.books.push(newBook); // Add the new book to the array
-    return of(this.books); // Return the updated books array wrapped in an observable
+  addBook(newBook: Book) : Observable<Book> {
+    return this.http.post<Book>(this.apiUrl, newBook).pipe(catchError(this.handleError));
   }
 
   // Method to update an existing book by its ID
   updateBook(updatedBook: Book) : Observable<Book | undefined> {
-    // Find the index of the book to update
-    const index = this.books.findIndex(book => book.id === updatedBook.id);
-    if (index > -1) {
-      this.books[index] = updatedBook; // Update the book at the found index
-      return of(updatedBook);
-    }
-    return of(undefined); // Return the updated books array wrapped in an observable
+    const url = `${this.apiUrl}/${updatedBook.id}`;
+    return this.http.put<Book>(url, updatedBook).pipe(catchError(this.handleError));
   }
 
   // Method to delete a book by its ID
-  deleteBook(bookId: number) : void {
-    // Filter out the book with the given ID from the books array
-    this.books = this.books.filter(book => book.id !== bookId);
+  deleteBook(bookId: number) : Observable<{}> {
+    const url = `${this.apiUrl}/${bookId}`;
+    return this.http.delete(url).pipe(catchError(this.handleError));
   }
   
   // New method to generate a new unique ID
   generateNewId() : number {
     return this.books.length > 0 ? Math.max(...this.books.map(book => book.id)) + 1 : 1;
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    console.error('API error:', error);
+    return throwError(() => new Error('Server error, please try again.'));
   }
 }
