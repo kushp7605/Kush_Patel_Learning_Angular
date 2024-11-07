@@ -42,3 +42,5 @@
   <!-- Back Button -->
   <button type="button" (click)="navigateToBookList()">Back To Book List</button>
 </form>
+
+<div *ngIf="error" class="error">{{ error }}</div>
