@@ -7,3 +7,5 @@
     <button type="button" class="delete-button" (click)="deleteBook(book.id)">Delete</button>
   </div>
 </div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
