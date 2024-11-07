@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Book } from '../Shared/Modules/book';
 import { BooksListItemComponent } from '../books-list-item/books-list-item.component';
 import { BooksService } from '../services/books.service';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, RouterLink} from '@angular/router';
 import { ModifyListItemComponent } from '../modify-list-item/modify-list-item.component';
 
 @Component({
@@ -18,18 +18,27 @@ import { ModifyListItemComponent } from '../modify-list-item/modify-list-item.co
 export class BooksListComponent implements OnInit {
   // Initialize an empty array to hold Book objects
   books: Book[] = [];
+  error: string | null = null;
 
-  constructor(private booksService: BooksService, private router: Router) {} // Dependency injection using constructor method
+
+  constructor(private booksService: BooksService, private router: Router, private route: ActivatedRoute) {} // Dependency injection using constructor method
 
   // Lifecycle hook that is called after the component is initialized
-  ngOnInit(): void {
+  ngOnInit() {
     // Call the getBooks method from BooksService and subscribe to the Observable
     this.booksService.getBooks().subscribe({
-      next: (data: Book[]) => this.books = data,
-      error:err => console.error("Error Fetching", err),
-      complete:() => console.log("Fetch Complete!")
+      next: (data: Book[]) => {
+        this.books = data;
+        this.error = null; // Set error to null if data fetch is successful
+      },
+      error: err => {
+        this.error = 'Error fetching books'; // Set an error message
+        console.error("Error fetching books", err);
+      },
+      complete: () => console.log("Books data fetch complete successfully!")
     });
   }
+  
 
   // Navigate to the edit form with the selected book ID
   editBook(bookId: number | undefined): void {
