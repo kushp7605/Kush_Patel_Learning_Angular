@@ -38,10 +38,10 @@ export class ModifyListItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
       // Fetch book details for updating
-      this.booksService.getBookById(Number(id)).subscribe({
+      this.booksService.getBookById(id).subscribe({
         next: (book) => {
           if (book) {
             this.book = book;
