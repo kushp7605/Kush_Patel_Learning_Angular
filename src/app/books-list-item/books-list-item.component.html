@@ -8,4 +8,6 @@
     <p *ngIf="book?.showRating && !book?.rating">No ratings available for this book</p>
     <button (click)="toggleRating()">Show Ratings</button>
 </div>
+
+<div *ngIf="error" class="error">{{ error }}</div>
   
