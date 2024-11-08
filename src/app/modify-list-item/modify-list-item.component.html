@@ -35,9 +35,8 @@
         <input type="text" id="rating" formControlName="rating" placeholder="Enter Ratings If Available"/>
     </div>
 
-    <!-- Conditional Button rendering based on whether ID exists or not (Add or Update) -->
-  <button type="submit" *ngIf="bookForm.get('id')?.value">Update Book</button>
-  <button type="submit" *ngIf="!bookForm.get('id')?.value">Add Book</button>
+    <!-- Button rendering based on whether ID exists or not (Add or Update Based On Submit Button) -->
+  <button type="submit">Submit</button>
 
   <!-- Back Button -->
   <button type="button" (click)="navigateToBookList()">Back To Book List</button>
