@@ -11,12 +11,15 @@ import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from './app/services/in-memory-data.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/books', pathMatch: 'full' }, // Default route
+  { path: '', redirectTo: '/books', pathMatch: 'full' }, // Default route eagerly loaded
   { path: 'books', component: BooksListComponent },
-  { path: 'books/:id', component: BooksListItemComponent },
-  { path: 'modify-list-item', component: ModifyListItemComponent },
+  { path: 'books/:id', loadComponent: () =>
+    import('./app/books-list-item/books-list-item.component').then(m => m.BooksListItemComponent) }, // Lazy Loaded
+  { path: 'modify-list-item', loadComponent: () =>
+    import('./app/modify-list-item/modify-list-item.component').then(m => m.ModifyListItemComponent) },
   { path: 'modify-list-item/:id', component: ModifyListItemComponent },
-  { path: '**', component: PageNotFoundComponent } // Wildcard route for a 404 page
+  { path: '**', loadComponent: () =>
+    import('./app/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent) } // Wildcard route for a 404 page
 ];
 
 bootstrapApplication(AppComponent, {
