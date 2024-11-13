@@ -67,9 +67,20 @@ p {
     margin-top: 10px; 
     font-weight: bold; 
     text-align: center;
-  }
+}
 
+/* Specific colors for rating visibility */
+.low-rating {
+    color: yellow; /* If ratings are available then yellow color */
+}
 
+.high-rating {
+    color: yellow; /* If ratings are available then yellow color */
+}
+
+.rating-notAvailable {
+    color: red; /* If ratings are not available then red color */
+}
 
 
 
