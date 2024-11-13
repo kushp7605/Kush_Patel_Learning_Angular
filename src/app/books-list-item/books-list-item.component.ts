@@ -1,13 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common'; 
+import { CommonModule, DatePipe, CurrencyPipe, UpperCasePipe} from '@angular/common'; 
 import { Book } from '../Shared/Modules/book';
-import { ActivatedRoute, RouterLink, Router} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { BooksService } from '../services/books.service';
+import { QuoteByAuthorPipe } from '../pipes/quote-by-author.pipe';
+import { BookRatingPipe } from '../pipes/book-rating.pipe';
+
 
 @Component({
   selector: 'app-books-list-item',
   standalone: true,
-  imports: [CommonModule, RouterLink, NgOptimizedImage],
+  imports: [CommonModule, DatePipe, CurrencyPipe, UpperCasePipe, QuoteByAuthorPipe, BookRatingPipe],
   templateUrl: './books-list-item.component.html',
   styleUrl: './books-list-item.component.css'
 })
