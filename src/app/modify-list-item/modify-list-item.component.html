@@ -11,12 +11,12 @@
         <input type="text" id="title" formControlName="title" placeholder="Enter Book Title" />
     </div>
 
-    <!-- Author Field -->
+    <!-- Author Name Field -->
     <div class="form-group">
         <label for="author">Author</label>
-        <input type="text" id="author" formControlName="author" placeholder="Enter Book Author"/>
+        <input type="text" id="author" formControlName="author" placeholder="Enter Book Author Name"/>
     </div>
-
+    
     <!-- Genre Field -->
     <div class="form-group">
         <label for="genre">Genre</label>
@@ -29,6 +29,18 @@
         <input type="text" id="publicationYear" formControlName="publicationYear" placeholder="Enter Book Publication Year"/>
     </div>
 
+    <!-- Price Field -->
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" id="price" formControlName="price" placeholder="Enter Book Price" />
+    </div>
+
+    <!-- Quote Field -->
+    <div class="form-group">
+        <label for="quote">Quote</label>
+        <input type="text" id="quote" formControlName="quote" placeholder="Enter Quote By Author"/>
+    </div>
+
     <!-- Ratings Field -->
     <div class="form-group">
         <label for="rating">Ratings</label>
@@ -36,10 +48,10 @@
     </div>
 
     <!-- Button rendering based on whether ID exists or not (Add or Update Based On Submit Button) -->
-  <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
 
-  <!-- Back Button -->
-  <button type="button" (click)="navigateToBookList()">Back To Book List</button>
+    <!-- Back Button -->
+    <button type="button" (click)="navigateToBookList()">Back To Book List</button>
 </form>
 
 <div *ngIf="error" class="error">{{ error }}</div>
