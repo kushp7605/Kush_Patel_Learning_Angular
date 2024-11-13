@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Book } from '../Shared/Modules/book';
 import { BooksListItemComponent } from '../books-list-item/books-list-item.component';
 import { BooksService } from '../services/books.service';
-import { ActivatedRoute, Router, RouterModule, RouterLink} from '@angular/router';
-import { ModifyListItemComponent } from '../modify-list-item/modify-list-item.component';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-books-list',
   standalone: true,
-  imports: [CommonModule, BooksListItemComponent, ModifyListItemComponent, RouterModule],
+  imports: [CommonModule, BooksListItemComponent, RouterModule],
   templateUrl: './books-list.component.html',
   styleUrls: ['./books-list.component.css'],
 })
