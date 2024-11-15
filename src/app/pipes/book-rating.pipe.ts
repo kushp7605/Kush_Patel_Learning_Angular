@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BookRatingPipe implements PipeTransform {
   transform(rating: number | undefined): string {
-    if (rating === undefined) {
+    if (rating === null) {
       return 'rating-notAvailable';  // For undefined or ratings not available, return class for red color
     } else if (rating === 5.0) {
       return 'high-rating'; // For high ratings, return class for yellow color
