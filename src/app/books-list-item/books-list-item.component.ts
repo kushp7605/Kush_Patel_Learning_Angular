@@ -5,12 +5,15 @@ import { ActivatedRoute, Router} from '@angular/router';
 import { BooksService } from '../services/books.service';
 import { QuoteByAuthorPipe } from '../pipes/quote-by-author.pipe';
 import { BookRatingPipe } from '../pipes/book-rating.pipe';
+import { HoverHighlightDirective } from '../directives/hover-highlight.directive';
+import { HoverTextColorDirective } from '../directives/hover-text-color.directive';
+
 
 
 @Component({
   selector: 'app-books-list-item',
   standalone: true,
-  imports: [CommonModule, DatePipe, CurrencyPipe, UpperCasePipe, QuoteByAuthorPipe, BookRatingPipe],
+  imports: [CommonModule, DatePipe, CurrencyPipe, UpperCasePipe, QuoteByAuthorPipe, BookRatingPipe, HoverHighlightDirective, HoverTextColorDirective],
   templateUrl: './books-list-item.component.html',
   styleUrl: './books-list-item.component.css'
 })
