@@ -1,19 +1,19 @@
 <div class="book-item">
-    <h2>Book Title: {{ book?.title | uppercase}}</h2>
-    <p>ID: {{book?.id}}</p>
-    <p>Author: {{book?.author}}</p>
-    <p>Publication Year: {{ book?.publicationYear | date}}</p>
-    <p>Genre: {{ book?.genre}}</p>
-    <p>Price: {{book?.price | currency: 'CAD': "symbol-narrow"}}</p>
+    <h2 [appHoverTextColor]="'chocolate'" [appLeaveTextColor]="'azure'">Book Title: {{ book?.title | uppercase}}</h2>
+    <p [appHoverTextColor]="'cornsilk'" [appLeaveTextColor]="'black'">ID: {{book?.id}}</p>
+    <p [appHoverTextColor]="'cornflowerblue'" [appLeaveTextColor]="'black'">Author: {{book?.author}}</p>
+    <p [appHoverTextColor]="'darkturquoise'" [appLeaveTextColor]="'black'">Publication Year: {{ book?.publicationYear | date}}</p>
+    <p [appHoverTextColor]="'navajowhite'" [appLeaveTextColor]="'black'">Genre: {{ book?.genre}}</p>
+    <p [appHoverTextColor]="'mistyrose'" [appLeaveTextColor]="'black'">Price: {{book?.price | currency: 'CAD': "symbol-narrow"}}</p>
 
     <!-- Using the custom QuoteByAuthorPipe to format the quote with author -->
-    <p *ngIf="book?.quote"><strong>Quote: {{ book?.quote | quoteByAuthor: book?.author }}</strong></p>
+    <p *ngIf="book?.quote" [appHoverTextColor]="'floralwhite'" [appLeaveTextColor]="'black'"><strong>Quote: {{ book?.quote | quoteByAuthor: book?.author }}</strong></p>
 
     <!-- Apply rating color based on the rating value -->
     <p *ngIf="book?.showRating && book?.rating" [ngClass]="book?.rating | bookRating"><strong>Ratings: {{ book?.rating }}</strong></p>
     <p *ngIf="book?.showRating && !book?.rating" class="rating-notAvailable"><strong>No ratings available for this book</strong></p>
 
-    <button (click)="toggleRating()">Show Ratings</button>
+    <button (click)="toggleRating()" [appHoverHighlight]="'indigo'" [appLeaveHighlight]="'darkseagreen'">Show Ratings</button>
 </div>
 
 <div *ngIf="error" class="error">{{ error }}</div>
