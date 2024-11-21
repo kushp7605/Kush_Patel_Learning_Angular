@@ -1,6 +1,6 @@
 <div class="book-item">
-    <h2 [appHoverTextColor]="'chocolate'" [appLeaveTextColor]="'azure'">Book Title: {{ book?.title | uppercase}}</h2>
-    <p [appHoverTextColor]="'cornsilk'" [appLeaveTextColor]="'black'">ID: {{book?.id}}</p>
+    <h2 [appHoverTextColor]="'chocolate'" [appLeaveTextColor]="'azure'" [appShowDetailsOnHover]="'Book Title: ' + book?.title">Book Title: {{ book?.title | uppercase}}</h2>
+    <p [appHoverTextColor]="'cornsilk'" [appLeaveTextColor]="'black'" [appShowDetailsOnHover]="'ID: '+ book?.id">ID: {{book?.id}}</p>
     <p [appHoverTextColor]="'cornflowerblue'" [appLeaveTextColor]="'black'">Author: {{book?.author}}</p>
     <p [appHoverTextColor]="'darkturquoise'" [appLeaveTextColor]="'black'">Publication Year: {{ book?.publicationYear | date}}</p>
     <p [appHoverTextColor]="'navajowhite'" [appLeaveTextColor]="'black'">Genre: {{ book?.genre}}</p>
