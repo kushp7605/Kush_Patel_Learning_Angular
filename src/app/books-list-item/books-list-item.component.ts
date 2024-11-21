@@ -7,13 +7,13 @@ import { QuoteByAuthorPipe } from '../pipes/quote-by-author.pipe';
 import { BookRatingPipe } from '../pipes/book-rating.pipe';
 import { HoverHighlightDirective } from '../directives/hover-highlight.directive';
 import { HoverTextColorDirective } from '../directives/hover-text-color.directive';
-
+import { ShowDetailsOnHoverDirective } from '../directives/show-details-on-hover.directive';
 
 
 @Component({
   selector: 'app-books-list-item',
   standalone: true,
-  imports: [CommonModule, DatePipe, CurrencyPipe, UpperCasePipe, QuoteByAuthorPipe, BookRatingPipe, HoverHighlightDirective, HoverTextColorDirective],
+  imports: [CommonModule, DatePipe, CurrencyPipe, UpperCasePipe, QuoteByAuthorPipe, BookRatingPipe, HoverHighlightDirective, HoverTextColorDirective, ShowDetailsOnHoverDirective],
   templateUrl: './books-list-item.component.html',
   styleUrl: './books-list-item.component.css'
 })
