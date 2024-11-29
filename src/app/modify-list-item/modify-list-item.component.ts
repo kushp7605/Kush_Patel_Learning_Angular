@@ -4,14 +4,18 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import { Book } from '../Shared/Modules/book';
 import { NgIf } from '@angular/common';
-import { AutoFocusDirective } from '../directives/auto-focus.directive';
 import { HighlightOnFocusDirective } from '../directives/highlight-on-focus.directive';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @Component({
   selector: 'app-modify-list-item',
   standalone: true,
-  imports: [NgIf, FormsModule, ReactiveFormsModule, AutoFocusDirective, HighlightOnFocusDirective],
+  imports: [NgIf, FormsModule, ReactiveFormsModule, HighlightOnFocusDirective, MatFormFieldModule,
+    MatLabel, MatInput, MatButtonModule, MatTooltipModule],
   templateUrl: './modify-list-item.component.html',
   styleUrl: './modify-list-item.component.css'
 })
