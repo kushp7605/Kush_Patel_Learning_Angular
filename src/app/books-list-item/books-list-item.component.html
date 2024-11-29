@@ -1,20 +1,39 @@
-<div class="book-item">
+<mat-card class="book-item">
     <h2 [appHoverTextColor]="'chocolate'" [appLeaveTextColor]="'azure'" [appShowDetailsOnHover]="'Book Title: ' + book?.title">Book Title: {{ book?.title | uppercase}}</h2>
-    <p [appHoverTextColor]="'cornsilk'" [appLeaveTextColor]="'black'" [appShowDetailsOnHover]="'ID: '+ book?.id">ID: {{book?.id}}</p>
-    <p [appHoverTextColor]="'cornflowerblue'" [appLeaveTextColor]="'black'">Author: {{book?.author}}</p>
-    <p [appHoverTextColor]="'darkturquoise'" [appLeaveTextColor]="'black'">Publication Year: {{ book?.publicationYear | date}}</p>
-    <p [appHoverTextColor]="'navajowhite'" [appLeaveTextColor]="'black'">Genre: {{ book?.genre}}</p>
-    <p [appHoverTextColor]="'mistyrose'" [appLeaveTextColor]="'black'">Price: {{book?.price | currency: 'CAD': "symbol-narrow"}}</p>
+    
+     <!-- Book Details with Material Tooltip for additional info -->
+    <mat-card-content class="mat-card-content">
+        <p [appHoverTextColor]="'cornsilk'" [appLeaveTextColor]="'black'" [appShowDetailsOnHover]="'ID: ' + book?.id">
+            <mat-icon class="mat-icon">info</mat-icon> ID: {{ book?.id }}
+        </p>
+        <p [appHoverTextColor]="'cornflowerblue'" [appLeaveTextColor]="'black'" matTooltip="Author of the book">
+            <mat-icon class="mat-icon">person</mat-icon> Author: {{ book?.author }}
+        </p>
+        <p [appHoverTextColor]="'darkturquoise'" [appLeaveTextColor]="'black'" matTooltip="Year of publication">
+            <mat-icon class="mat-icon">date_range</mat-icon> Publication Year: {{ book?.publicationYear | date }}
+        </p>
+        <p [appHoverTextColor]="'navajowhite'" [appLeaveTextColor]="'black'" matTooltip="Genre of the book">
+            <mat-icon class="mat-icon">category</mat-icon> Genre: {{ book?.genre }}
+        </p>
+        <p [appHoverTextColor]="'mistyrose'" [appLeaveTextColor]="'black'" matTooltip="Price of the book">
+            <mat-icon class="mat-icon">attach_money</mat-icon> Price: {{ book?.price | currency: 'CAD': 'symbol-narrow' }}
+        </p>
 
-    <!-- Using the custom QuoteByAuthorPipe to format the quote with author -->
-    <p *ngIf="book?.quote" [appHoverTextColor]="'floralwhite'" [appLeaveTextColor]="'black'"><strong>Quote: {{ book?.quote | quoteByAuthor: book?.author }}</strong></p>
+        <!-- Quote Section with Hover Text Color and Conditional Rendering -->
+        <p *ngIf="book?.quote" [appHoverTextColor]="'floralwhite'" [appLeaveTextColor]="'black'" matTooltip="Quote by author">
+            <strong>Quote: {{ book?.quote | quoteByAuthor: book?.author }}</strong>
+        </p>
 
-    <!-- Apply rating color based on the rating value -->
-    <p *ngIf="book?.showRating && book?.rating" [ngClass]="book?.rating | bookRating"><strong>Ratings: {{ book?.rating }}</strong></p>
-    <p *ngIf="book?.showRating && !book?.rating" class="rating-notAvailable"><strong>No ratings available for this book</strong></p>
-
-    <button (click)="toggleRating()" [appHoverHighlight]="'indigo'" [appLeaveHighlight]="'darkseagreen'">Show Ratings</button>
-</div>
+        <p *ngIf="book?.showRating && book?.rating" [ngClass]="book?.rating | bookRating"><strong>Ratings: {{ book?.rating }}</strong></p>
+        <p *ngIf="book?.showRating && !book?.rating" class="rating-notAvailable"><strong>No ratings available for this book</strong></p>
+    </mat-card-content>
+    
+    <!-- Button with Material Design -->
+    <mat-card-actions class="mat-card-actions">
+        <button mat-raised-button color="warn" (click)="toggleRating()" [appHoverHighlight]="'indigo'" [appLeaveHighlight]="'darkseagreen'">
+            Show Ratings</button>
+    </mat-card-actions>
+</mat-card>
 
 <div *ngIf="error" class="error">{{ error }}</div>
   
