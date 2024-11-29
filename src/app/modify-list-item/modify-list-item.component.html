@@ -1,57 +1,57 @@
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
     <!-- ID Field -->
-    <div class="form-group">
-        <label for="id">ID</label>
-        <input type="number" id="id" formControlName="id" [appHighlightOnFocus]="'gainsboro'" [appHighlightOnBlur]="'honeydew'"/>
-    </div>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Auto-Generated ID">ID</mat-label>
+        <input matInput type="number" id="id" formControlName="id" [appHighlightOnFocus]="'gainsboro'" [appHighlightOnBlur]="'honeydew'"/>
+    </mat-form-field>
 
     <!-- Title Field -->
-    <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" id="title" formControlName="title" placeholder="Enter Book Title" [appHighlightOnFocus]="'aquamarine'" [appHighlightOnBlur]="'burlywood'" appAutoFocus/>
-    </div>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Enter Book Title">Title</mat-label>
+        <input matInput type="text" id="title" formControlName="title" placeholder="Enter Book Title" [appHighlightOnFocus]="'aquamarine'" [appHighlightOnBlur]="'burlywood'"/>
+    </mat-form-field>
 
     <!-- Author Name Field -->
-    <div class="form-group">
-        <label for="author">Author</label>
-        <input type="text" id="author" formControlName="author" placeholder="Enter Book Author Name" [appHighlightOnFocus]="'orange'" [appHighlightOnBlur]="'navajowhite'"/>
-    </div>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Enter Book Author">Author</mat-label>
+        <input matInput type="text" id="author" formControlName="author" placeholder="Enter Book Author Name" [appHighlightOnFocus]="'orange'" [appHighlightOnBlur]="'navajowhite'"/>
+    </mat-form-field>
     
     <!-- Genre Field -->
-    <div class="form-group">
-        <label for="genre">Genre</label>
-        <input type="text" id="genre" formControlName="genre" placeholder="Enter Book Genre" [appHighlightOnFocus]="'gold'" [appHighlightOnBlur]="'beige'"/>
-    </div>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Enter Book Genre">Genre</mat-label>
+        <input matInput type="text" id="genre" formControlName="genre" placeholder="Enter Book Genre" [appHighlightOnFocus]="'gold'" [appHighlightOnBlur]="'beige'"/>
+    </mat-form-field>
 
     <!-- Publication Year Field -->
-    <div class="form-group">
-        <label for="publicationYear">Publication Year</label>
-        <input type="text" id="publicationYear" formControlName="publicationYear" placeholder="Enter Book Publication Year" [appHighlightOnFocus]="'lightblue'" [appHighlightOnBlur]="'lavender'"/>
-    </div>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Enter Book Publication Year">Publication Year</mat-label>
+        <input matInput type="text" id="publicationYear" formControlName="publicationYear" placeholder="Enter Book Publication Year" [appHighlightOnFocus]="'lightblue'" [appHighlightOnBlur]="'lavender'"/>
+    </mat-form-field>
 
     <!-- Price Field -->
-    <div class="form-group">
-        <label for="price">Price</label>
-        <input type="text" id="price" formControlName="price" placeholder="Enter Book Price" [appHighlightOnFocus]="'peachpuff'" [appHighlightOnBlur]="'lightcoral'"/>
-    </div>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Enter Book Price">Price</mat-label>
+        <input matInput type="text" id="price" formControlName="price" placeholder="Enter Book Price" [appHighlightOnFocus]="'peachpuff'" [appHighlightOnBlur]="'lightcoral'"/>
+    </mat-form-field>
 
     <!-- Quote Field -->
-    <div class="form-group">
-        <label for="quote">Quote</label>
-        <input type="text" id="quote" formControlName="quote" placeholder="Enter Quote By Author" [appHighlightOnFocus]="'rosybrown'" [appHighlightOnBlur]="'lightsteelblue'"/>
-    </div>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Enter Quote By Author">Quote</mat-label>
+        <input matInput type="text" id="quote" formControlName="quote" placeholder="Enter Quote By Author" [appHighlightOnFocus]="'rosybrown'" [appHighlightOnBlur]="'lightsteelblue'"/>
+    </mat-form-field>
 
     <!-- Ratings Field -->
-    <div class="form-group">
-        <label for="rating">Ratings</label>
-        <input type="text" id="rating" formControlName="rating" placeholder="Enter Ratings If Available" [appHighlightOnFocus]="'thistle'" [appHighlightOnBlur]="'skyblue'"/>
+    <mat-form-field class="mat-form-field" appearance="outline">
+        <mat-label matTooltip="Enter Book Ratings If Available">Ratings</mat-label>
+        <input matInput type="text" id="rating" formControlName="rating" placeholder="Enter Ratings If Available" [appHighlightOnFocus]="'thistle'" [appHighlightOnBlur]="'skyblue'"/>
+    </mat-form-field>
+
+    <!-- Submit and Back Buttons -->
+    <div class="button-group">
+        <button mat-raised-button color="primary" type="submit" matTooltip="Submit Button">Submit</button>
+        <button mat-flat-button color="tertiary" type="button" matTooltip="Back To Book List Button" (click)="navigateToBookList()">Back To Book List</button>
     </div>
-
-    <!-- Button rendering based on whether ID exists or not (Add or Update Based On Submit Button) -->
-    <button type="submit">Submit</button>
-
-    <!-- Back Button -->
-    <button type="button" (click)="navigateToBookList()">Back To Book List</button>
 </form>
 
 <div *ngIf="error" class="error">{{ error }}</div>
