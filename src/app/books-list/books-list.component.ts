@@ -4,11 +4,15 @@ import { Book } from '../Shared/Modules/book';
 import { BooksListItemComponent } from '../books-list-item/books-list-item.component';
 import { BooksService } from '../services/books.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-books-list',
   standalone: true,
-  imports: [CommonModule, BooksListItemComponent, RouterModule],
+  imports: [CommonModule, BooksListItemComponent, RouterModule, MatButtonModule, MatCardModule, MatIconModule, MatTooltipModule],
   templateUrl: './books-list.component.html',
   styleUrls: ['./books-list.component.css'],
 })
