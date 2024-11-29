@@ -8,12 +8,17 @@ import { BookRatingPipe } from '../pipes/book-rating.pipe';
 import { HoverHighlightDirective } from '../directives/hover-highlight.directive';
 import { HoverTextColorDirective } from '../directives/hover-text-color.directive';
 import { ShowDetailsOnHoverDirective } from '../directives/show-details-on-hover.directive';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-books-list-item',
   standalone: true,
-  imports: [CommonModule, DatePipe, CurrencyPipe, UpperCasePipe, QuoteByAuthorPipe, BookRatingPipe, HoverHighlightDirective, HoverTextColorDirective, ShowDetailsOnHoverDirective],
+  imports: [CommonModule, DatePipe, CurrencyPipe, UpperCasePipe, QuoteByAuthorPipe, BookRatingPipe, HoverHighlightDirective, 
+    HoverTextColorDirective, ShowDetailsOnHoverDirective, MatCardModule, MatIconModule, MatTooltipModule, MatButtonModule],
   templateUrl: './books-list-item.component.html',
   styleUrl: './books-list-item.component.css'
 })
