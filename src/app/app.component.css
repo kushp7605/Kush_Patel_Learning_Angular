@@ -17,30 +17,39 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Styling container for the navigation bar */
-.nav-bar {
+/* Styling for mat-toolbar (navigation bar) */
+.mat-toolbar {
     background-color: darkgray;
     padding: 10px;
-    text-align: center;
+    justify-content: center;
 }
 
-/* Styling for the link */
-nav a {
-    margin-right: 15px;
-    text-decoration: none;
-    color: blue; 
-    font-weight: bold;
-    border-bottom: 2px solid;
-    padding-bottom: 2px;
+/* Center the buttons inside a div */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
 }
 
-nav a:hover {
-    color: red;
+/* Styling for mat-button links */
+button[mat-button] {
+    color: cornsilk; 
     font-weight: bold;
+    background-color: rgb(63, 81, 181); 
+    padding: 8px 16px;
+    margin-left: 8px;
+    border-radius: 4px;
+    text-transform: none;
 }
 
-/* Styling for the active */
-nav a.active {
+/* Styling for the active mat-button */
+button[mat-button]:active {
     font-weight: bold;
+    color: yellow; 
 }
-  
+
+/* Hover effect for buttons */
+button[mat-button]:hover {
+    background-color: rgb(30, 60, 114); 
+    color: yellow;
+}
