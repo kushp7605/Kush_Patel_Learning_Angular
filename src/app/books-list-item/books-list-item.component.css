@@ -1,37 +1,33 @@
 /* Styling for individual book items */
 .book-item {
+    background-color: rgb(88, 73, 58);
     border: 3px solid black;
     padding: 10px;
     margin: 5px;
 }
 
-/* Background color for even-indexed book items */
-.even-item {
-    background-color: pink;
-}
-
-/* Background color for odd-indexed book items */
-.odd-item {
-    background-color: teal; 
-}
-
 /* Styling for the button */
 button {
-    background-color: darkred;
-    color: yellow;
     font-weight: bold;
     border: none; 
     border-radius: 5px; 
-    padding: 10px 15px; 
+    padding: 10px 15px;
+    width: 25%; 
     font-size: 16px; 
     cursor: pointer; 
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Button focus style */
 button:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Hover Style */
+button:hover {
+    color: yellow;
+    transform: translateY(2px);
 }
 
 /* Styling for book titles */
@@ -93,11 +89,36 @@ p {
     z-index: 1000;
     transition: opacity 0.3s ease; 
     opacity: 0; 
-  }
+}
   
-  .tooltip.show {
+.tooltip.show {
     opacity: 1; 
-  }
+}
+
+/* Styling for the Material card */
+.mat-card-content {
+    background-color: rgb(148, 108, 7);
+    margin: 20px;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    padding: 15px;
+}
+
+/* Styling for the Mat Card Actions */
+.mat-card-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Styling for Mat Icon elements */
+.mat-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    color: black;
+}
 
 
 
