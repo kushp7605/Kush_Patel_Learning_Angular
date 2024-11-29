@@ -1,11 +1,13 @@
-<div *ngFor="let book of books; let i = index" class="book-container" [ngStyle]="{'background-color': i % 2 === 0 ? 'pink' : 'teal'}">
+<div *ngFor="let book of books">
+  <mat-card class="book-card">
   <app-books-list-item [book]="book" [showRating]="book.showRating"></app-books-list-item>
   
   <!-- Edit and Delete Buttons -->
   <div class="button-container">
-    <button type="button" class="edit-button" (click)="editBook(book.id)">Edit</button>
-    <button type="button" class="delete-button" (click)="deleteBook(book.id)">Delete</button>
+    <button mat-raised-button color="primary" matTooltip="Edit Book" (click)="editBook(book.id)">Edit</button>
+    <button mat-fab color="tertiary" matTooltip="Delete Book" (click)="deleteBook(book.id)"><mat-icon>delete</mat-icon></button>
   </div>
+  </mat-card>
 </div>
 
 <div *ngIf="error" class="error">{{ error }}</div>
