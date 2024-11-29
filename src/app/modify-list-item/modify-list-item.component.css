@@ -1,93 +1,81 @@
-/* modify-student.component.css */
-
 /* Container for the form */
 form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 5px;
-    background-color: rgb(249, 249, 249);
-  }
-  
-  /* Style for form groups */
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid rgb(204, 204, 204);
-    border-radius: 4px;
-  }
-  
-  
-  /* Style for buttons */
-  button {
-    padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  button[type="submit"] {
-    font-weight: bold;
-    background-color: rgb(76, 175, 80);
-    color: purple;
-    transition: background-color 0.3s ease;
-  }
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 3px solid rgb(18, 11, 11);
+  border-radius: 8px;
+  background-color: rgb(149, 147, 119);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  button[type="submit"]:hover {
-    background-color: lightsalmon;
-  }
+/* Material Design input fields */
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
 
-  button[type="submit"]:focus {
-    outline: none;
-    background-color: lightsalmon;
-  }
-  
-  
-  button[type="button"]:last-of-type {
-    font-weight: bold;
-    background-color: rgb(220, 53, 69);
-    color: yellow;
-    transition: background-color 0.3s ease;
-  }
+/* Buttons group styling */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 1rem;
+}
 
-  button[type="button"]:last-of-type:hover {
-    background-color: rgb(75, 75, 182);
-  }
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-  button[type="button"]:last-of-type:focus {
-    outline: none;
-    background-color: rgb(75, 75, 182);
-  }
-  
-  /* Optional: Style for invalid form state */
-  .invalid-form-message {
-    color: red;
-    font-weight: bold;
-  }
+/* Submit button styling */
+button[type="submit"] {
+  margin-right: 16px;
+  font-weight: bold;
+  color: darkgreen;
+}
 
-  /* Error message styling */
-  .error {
-    color: red; 
-    background-color: blue; 
-    border: 2px solid black; 
-    padding: 10px;
-    border-radius: 4px; 
-    margin-top: 10px; 
-    font-weight: bold; 
-    text-align: center;
-  }
-  
+button[type="submit"]:hover {
+  color: rgb(108, 61, 2);
+  background-color: cyan;
+  transform: translateY(-2px);
+}
+
+button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 128, 0, 0.6);
+}
+
+/* Back button styling */
+button[type="button"]:last-of-type {
+  font-weight: bold;
+  color: rgb(146, 222, 196);
+}
+
+button[type="button"]:last-of-type:hover {
+  color: burlywood;
+  background-color: rgb(13, 58, 59);
+  transform: translateY(-2px);
+}
+
+button[type="button"]:last-of-type:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(220, 53, 69, 0.6);
+}
+
+/* Error message styling */
+.error {
+  color: rgb(114, 28, 36);
+  background-color: rgb(248, 215, 218);
+  border: 1px solid rgb(245, 198, 203);
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
